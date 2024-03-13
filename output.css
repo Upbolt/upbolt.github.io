@@ -616,6 +616,10 @@ video {
   margin-top: 1px;
 }
 
+.mr-4 {
+  margin-right: 1rem;
+}
+
 .block {
   display: block;
 }
@@ -693,6 +697,10 @@ video {
   width: 42px;
 }
 
+.w-\[200px\] {
+  width: 200px;
+}
+
 .min-w-max {
   min-width: -moz-max-content;
   min-width: max-content;
@@ -756,6 +764,10 @@ video {
   flex-direction: column;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .items-center {
   align-items: center;
 }
@@ -778,6 +790,14 @@ video {
 
 .gap-5 {
   gap: 1.25rem;
+}
+
+.gap-\[15px\] {
+  gap: 15px;
+}
+
+.gap-4 {
+  gap: 1rem;
 }
 
 .space-x-px > :not([hidden]) ~ :not([hidden]) {
@@ -870,6 +890,10 @@ video {
 
 .bg-blackA6 {
   background-color: rgba(0, 0, 0, 0.4);
+}
+
+.bg-blackA2 {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .bg-opacity-25 {
@@ -983,6 +1007,10 @@ video {
   line-height: 1;
 }
 
+.leading-\[35px\] {
+  line-height: 35px;
+}
+
 .text-\[\#65636d\] {
   --tw-text-opacity: 1;
   color: rgb(101 99 109 / var(--tw-text-opacity));
@@ -1013,6 +1041,33 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-mauve3 {
+  --tw-text-opacity: 1;
+  color: rgb(242 239 243 / var(--tw-text-opacity));
+}
+
+.text-mauve12 {
+  --tw-text-opacity: 1;
+  color: rgb(33 31 38 / var(--tw-text-opacity));
+}
+
+.text-mauve9 {
+  --tw-text-opacity: 1;
+  color: rgb(142 140 153 / var(--tw-text-opacity));
+}
+
+.text-black\/75 {
+  color: rgb(0 0 0 / 0.75);
+}
+
+.text-blackA6 {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.text-blackA7 {
+  color: rgba(0, 0, 0, 0.5);
+}
+
 .shadow-\[0_1px_0\] {
   --tw-shadow: 0 1px 0;
   --tw-shadow-colored: 0 1px 0 var(--tw-shadow-color);
@@ -1031,6 +1086,12 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.shadow-\[0_0_0_1px\] {
+  --tw-shadow: 0 0 0 1px;
+  --tw-shadow-colored: 0 0 0 1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .shadow-black\/5 {
   --tw-shadow-color: rgb(0 0 0 / 0.05);
   --tw-shadow: var(--tw-shadow-colored);
@@ -1043,6 +1104,11 @@ video {
 
 .shadow-mauve6 {
   --tw-shadow-color: #dbd8e0;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.shadow-blackA6 {
+  --tw-shadow-color: rgba(0, 0, 0, 0.4);
   --tw-shadow: var(--tw-shadow-colored);
 }
 
@@ -1120,6 +1186,90 @@ video {
   to {
     height: 0;
   }
+}
+
+.selection\:bg-blackA6 *::-moz-selection {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.selection\:bg-blackA6 *::selection {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.selection\:bg-black\/20 *::-moz-selection {
+  background-color: rgb(0 0 0 / 0.2);
+}
+
+.selection\:bg-black\/20 *::selection {
+  background-color: rgb(0 0 0 / 0.2);
+}
+
+.selection\:bg-black\/30 *::-moz-selection {
+  background-color: rgb(0 0 0 / 0.3);
+}
+
+.selection\:bg-black\/30 *::selection {
+  background-color: rgb(0 0 0 / 0.3);
+}
+
+.selection\:bg-black\/50 *::-moz-selection {
+  background-color: rgb(0 0 0 / 0.5);
+}
+
+.selection\:bg-black\/50 *::selection {
+  background-color: rgb(0 0 0 / 0.5);
+}
+
+.selection\:text-white *::-moz-selection {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.selection\:text-white *::selection {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.selection\:bg-blackA6::-moz-selection {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.selection\:bg-blackA6::selection {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.selection\:bg-black\/20::-moz-selection {
+  background-color: rgb(0 0 0 / 0.2);
+}
+
+.selection\:bg-black\/20::selection {
+  background-color: rgb(0 0 0 / 0.2);
+}
+
+.selection\:bg-black\/30::-moz-selection {
+  background-color: rgb(0 0 0 / 0.3);
+}
+
+.selection\:bg-black\/30::selection {
+  background-color: rgb(0 0 0 / 0.3);
+}
+
+.selection\:bg-black\/50::-moz-selection {
+  background-color: rgb(0 0 0 / 0.5);
+}
+
+.selection\:bg-black\/50::selection {
+  background-color: rgb(0 0 0 / 0.5);
+}
+
+.selection\:text-white::-moz-selection {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.selection\:text-white::selection {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .after\:block::after {
