@@ -1,0 +1,114 @@
+<html>
+  <head>
+    <style>
+      :root {
+        color: white;
+        --colors: #ff0000, #00ff00, #ff0000;
+        --duration: 2s;
+      }
+
+      .animate {
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-image: linear-gradient(to right, var(--colors));
+        background-size: 300%;
+        animation: gradient var(--duration) linear infinite;
+      }
+
+      @keyframes gradient {
+        to {
+          background-position: 150%;
+        }
+      }
+    </style>
+  </head>
+  <body style="background: black" class="activity-stream">
+    <div
+      style="
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      "
+    >
+      <code style="display: block;" id="code"></code>
+      <span
+        style="font-size: 500%; font-weight: 900; display: block"
+        class="animate"
+        >Animated Text</span
+      >
+      <div>
+        <div style="display: flex; gap: 8px">
+          <span style="display: block">Animation Duration (seconds)</span>
+          <input type="number" id="duration" />
+        </div>
+      </div>
+      <div>
+        <div style="display: flex; gap: 8px">
+          <span style="display: block">Colors</span>
+          <button id="new-color">+</button>
+        </div>
+        <div
+          id="colors"
+          style="display: flex; flex-direction: column; gap: 2px"
+        ></div>
+      </div>
+    </div>
+    <script>
+      let colors = document.getElementById("colors");
+      let pickers = [];
+
+      let duration = document.getElementById("duration");
+      duration.value = "2";
+
+      let code = document.getElementById("code");
+
+      duration
+        .addEventListener("change", (event) => {
+          document.documentElement.style.setProperty(
+            "--duration",
+            `${event.target.value}s`,
+          );
+        });
+
+      document.getElementById("new-color").addEventListener("click", () => {
+        const parent = document.createElement("div");
+        parent.style = "display: flex; gap: 2px";
+        colors.appendChild(parent);
+
+        const colorPicker = document.createElement("input");
+        colorPicker.type = "color";
+
+        const pick = () => {
+          const pickerValues = [...pickers.map((picker) => picker.value), pickers[0]?.value];
+          document.documentElement.style.setProperty(
+            "--colors",
+            pickerValues.join(","),
+          );
+          code.innerHTML = pickerValues.join(",");
+          
+          console.log(
+            document.documentElement.style.getPropertyValue("--colors"),
+          );
+        };
+
+        colorPicker.addEventListener("input", pick);
+        colorPicker.addEventListener("change", pick);
+
+        parent.appendChild(colorPicker);
+        pickers.push(colorPicker);
+
+        const remove = document.createElement("button");
+        remove.addEventListener("click", () => {
+          colors.removeChild(parent);
+          pickers = pickers.filter((picker) => picker != colorPicker);
+          pick();
+        });
+        remove.innerHTML = "-";
+        parent.appendChild(remove);
+      });
+    </script>
+  </body>
+</html>
